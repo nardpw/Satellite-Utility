@@ -26,6 +26,7 @@ class Main(discord.Client):
                 Logger.error(e)
 
 if __name__ == '__main__':
+    print('Starting...')
     global config
     # config = json.load(open('config.json'))
     client = Main()
