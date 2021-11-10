@@ -1,5 +1,6 @@
 import discord
 import json
+import os
 from command.CommandManager import CommandManager
 from utils.Logger import Logger
 
@@ -26,6 +27,6 @@ class Main(discord.Client):
 
 if __name__ == '__main__':
     global config
-    config = json.load(open('config.json'))
+    # config = json.load(open('config.json'))
     client = Main()
-    client.run(config['token'])
+    client.run(os.environ.get('PRIVATE_BOT_TOKEN'))
