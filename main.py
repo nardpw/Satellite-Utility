@@ -29,4 +29,4 @@ if __name__ == '__main__':
     global config
     # config = json.load(open('config.json'))
     client = Main()
-    client.run(os.environ.get('PRIVATE_BOT_TOKEN'))
+    client.run(os.environ.get('TOKEN'))

@@ -27,7 +27,7 @@ jobs:
         # But first we read the WEBHOOK secret and create an
         # environment variable with the same name.
         env:
-          TOKEN: ${{ secrets.PRIVATE_BOT_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           pip install -r requirements.txt
           python main.py

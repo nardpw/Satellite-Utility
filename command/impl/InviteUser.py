@@ -5,7 +5,7 @@ import discord
 class InviteUser(Command):
     def __init__(self):
         super().__init__('invite', self.invite, 'Invites a user to the server', 'invite <user>', ['invite', 'inv'])
-        self.invited_users = dict[str, list]()
+        self.invited_users = {}
     
     async def invite(self, message, args):
         if len(args) == 0:
