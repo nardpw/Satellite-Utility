@@ -29,4 +29,5 @@ if __name__ == '__main__':
     global config
     # config = json.load(open('config.json'))
     client = Main()
+    print(os.environ.get('TOKEN'))
     client.run(os.environ.get('TOKEN'))
