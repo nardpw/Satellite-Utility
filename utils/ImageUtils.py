@@ -1,6 +1,5 @@
 import discord
 import cv2
-import numpy
 from PIL import Image, ImageDraw, ImageFont
 from sklearn.cluster import KMeans
 

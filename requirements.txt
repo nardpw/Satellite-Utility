@@ -1,0 +1,6 @@
+discord
+datetime
+requests
+opencv-python
+Pillow
+sklearn
