@@ -32,7 +32,7 @@ class CommandManager:
     
     async def handle_message(self, message):
         for command in self.commands:
-            command.on_message(message)
+            await command.on_message(message)
         if message.content.startswith('!'):
             args = message.content.split(' ')
             command = args[0][1:]

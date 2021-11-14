@@ -13,19 +13,19 @@ class InviteUser(Command):
             return
         try:
             Logger.log('Inviting ' + args[0] + ' ' + str(message.author))
-
-            if args[0] in self.invited_users:
+            user = message.mentions[0] if len(message.mentions) > 0 else message.guild.get_member(int(args[0]))
+            if user in self.invited_users:
                 if message.channel.id in self.invited_users[args[0]]:
                     await message.channel.send('Already invited')
                     return
 
             invite = await self.create_invite_onece(message.channel)
-            if args[0] not in self.invited_users:
-                self.invited_users[args[0]] = list()
-            self.invited_users[args[0]].append(message.channel.id)
-            Logger.log('Invited ' + invite.url + args[0] + ' ' + str(message.author))
+            if user not in self.invited_users:
+                self.invited_users[user] = list()
+            self.invited_users[user].append(message.channel.id)
+            Logger.log('Invited ' + invite.url + user + ' ' + str(message.author))
             await message.mentions[0].send('You have been invited to the server!' + invite.url)
-            await message.channel.send('Invited ' + args[0] + ' ' + str(message.author))
+            await message.channel.send('Invited ' + user + ' ' + str(message.author))
         except Exception as e:
             await message.channel.send('Error: ' + str(e))
             Logger.error(e)
